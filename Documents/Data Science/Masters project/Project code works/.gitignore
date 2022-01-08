@@ -1,0 +1,10 @@
+/Lib
+/Scripts
+/Include
+
+pyvenv.cfg
+
+/node_modules
+
+/_pycache_
+/.ipynb_checkpoints

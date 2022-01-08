@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&family=Poppins:wght@500;700&display=swap');
+
+$appPrimaryColor: #2C6E49;
+$appSecondaryColor: #D5F7E6;
+$appTertiaryColor: #92E3A9;
+
+$appPrimaryFont: 'Poppins', sans-serif;
+$appSecondaryFont: sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $appPrimaryFont;
+}
+
+body{
+  width: 100%;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.container{
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.btn{
+  background-color: $appPrimaryColor;
+  color: white;
+  border-radius: 23px;
+  font-size: 12.5px;
+  padding: 12px 35px;
+  opacity: 0.9;
+  box-shadow: 0px 2px 3px #888888;
+}
+
+.counter input[type=number]::-webkit-outer-spin-button,
+.counter input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.counter input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.counter-btn{
+  -webkit-user-select: none; /* Safari */ 
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+
+@import './includes/home';
+@import './includes/test';
+@import './includes/take_test';
+@import './includes/test_result';
+@import './includes/articles';
+
+@import './includes/tests/age';
+@import './includes/tests/weight';
+@import './includes/tests/bmi';
+@import './includes/tests/glucose';
+@import './includes/tests/insulin';
+@import './includes/tests/blood';
+
+@import './includes/articles/diet';
+
+@import './includes/global/header';
+@import './includes/global/footer';

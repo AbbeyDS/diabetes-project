@@ -1,0 +1,30 @@
+#test-result{
+  .main{
+
+    padding-top: 2.2rem;
+    padding-bottom: 3rem;
+
+    .row{
+      align-items: center;
+
+      h1{
+        font-size: 2.2em;
+        font-weight: 800;
+      }
+
+      h2{
+        font-size: 2.2em;
+        font-weight: 800;
+        color: green;
+      }
+
+      p{
+        font-weight: 600;
+      }
+
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

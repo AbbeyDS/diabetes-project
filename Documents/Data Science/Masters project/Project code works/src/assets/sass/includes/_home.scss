@@ -1,0 +1,150 @@
+#home{
+  .main{
+    .row{
+      align-items: center;
+      padding-top: 2.2rem;
+      padding-bottom: 2.2rem;
+
+      .img-col{
+        text-align: right;
+
+        img{
+          width: 90%;
+          text-align: right;
+        }
+      }
+
+      .text-col{
+        h1{
+          font-size: 2.8em;
+          font-weight: 1000;
+        }
+      }
+    }
+  }
+  .articles{
+    padding: 5rem 0 4.5rem;
+    background-color: $appSecondaryColor;
+
+    .title{
+        font-size: 1.7rem;
+        font-weight: 700;
+        text-align: center;
+      }
+
+    .col-md-4{
+      margin-top: 2rem;
+      padding: 0 4%;
+
+      .header{
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+
+        .icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 5rem;
+          height: 4.5rem;
+          border-radius: 20px;
+          margin-right: 20px;
+          font-size: 4rem;
+          font-weight: 900;
+          color: white;
+          background-color: #44B47E;
+        }
+
+        .icon-2{
+          background-color: #FA9E42;
+          font-size: 3rem;
+        }
+
+        .icon-3{
+          background-color: #F7D061;
+          font-size: 3rem;
+        }
+      }
+
+      p{
+        margin-top: 1rem;
+        font-size: 13px;
+        word-spacing: 2px;
+        text-align: justify;
+      }
+    }
+  }
+
+  .ai{
+    padding: 3rem 0;
+
+    .row{
+      align-items: center;
+
+      .col-md-6{
+        h1{
+          font-weight: 700;
+        }
+
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .read-more{
+    padding: 2rem 0;
+    
+    h3{
+      font-weight: 700;
+    }
+    .title{
+      text-align: center;
+    }
+    .row{
+      margin-top: 4rem;
+
+      span{
+        color: $appPrimaryColor;
+      }
+    }
+    .best-foods{
+      img{
+        width: 100%;
+        max-height: 17rem;
+        border-radius: 5px;
+        object-fit: cover;
+      }
+
+      p{
+        font-size: 13px;
+        line-height: 25px;
+      }
+    }
+
+    .right-articles{
+      padding: 0 5%;
+
+      .single-article{
+        display: flex;
+        align-items: center;
+        margin-bottom: 2rem;
+
+        img{
+          width: 10rem;
+          margin-right: 20px;
+        }
+
+        .article-title{
+          font-size: 1.5rem;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+
+  a{
+    color: inherit;
+  }
+}
