@@ -18,6 +18,7 @@ const Bmi = () => {
 
   bmi.set((weightValue/heightSquared).toFixed(2));
 
+
   return (
     <div id="bmi">
       <div className="container">
@@ -28,7 +29,7 @@ const Bmi = () => {
             <div className="control">
               <button className="btn" onClick={() => question.set(question.value - 1)}>Previous</button>
               <h6>Question 3 out of 6</h6>
-              <button className="btn" onClick={() => question.set(question.value + 1)}>Next</button>
+              <button className="btn" onClick={() => bmi.value != "" && question.set(question.value + 1)}>Next</button>
             </div>
           </div>
           <div className="col-md-6">

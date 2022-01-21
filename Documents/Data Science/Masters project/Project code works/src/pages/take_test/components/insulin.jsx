@@ -24,14 +24,14 @@ const Insulin = () => {
             <div className="q-number">5</div>
             <h2>Insulin Level</h2>
             <div className="counter">
-              <div className="counter-btn" unselectable="on" onClick={() => insulinLevel.value !== "" && insulinLevel.value > 0 && insulinLevel.set(parseFloat(insulinLevel.value) - 1)}>-</div>
-              <input type="number" name="insulinLevel" value={insulinLevel.value} onChange={(e) => insulinLevel.set(e.target.value)} autoFocus />
-              <div className="counter-btn" unselectable="on" onClick={() => insulinLevel.value === "" ? insulinLevel.set(1) : insulinLevel.set(parseFloat(insulinLevel.value) + 1)}>+</div>
+              <div className="counter-btn" onClick={() => insulinLevel.value > 0 && insulinLevel.set(parseFloat(insulinLevel.value) - 1)}>-</div>
+              <input type="text" name="insulinLevel" value={insulinLevel.value} onChange={(e) => insulinLevel.set(e.target.value)} autoFocus />
+              <div className="counter-btn" onClick={() => insulinLevel.set(parseFloat(insulinLevel.value) + 1)}>+</div>
             </div>
             <div className="control">
               <button className="btn" onClick={() => question.set(question.value - 1)}>Previous</button>
               <h6>Question 5 out of 6</h6>
-              <button className="btn" onClick={() => question.set(question.value + 1)}>Next</button>
+              <button className="btn" onClick={() => insulinLevel.value != "" && question.set(question.value + 1)}>Next</button>
             </div>
           </div>
           <div className="col-md-6">

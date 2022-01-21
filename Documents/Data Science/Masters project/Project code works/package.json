@@ -2,7 +2,7 @@
 "name": "diabetes-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://127.0.0.1:5000/",
+  "proxy": "http://0.0.0.0:5000/",
   "dependencies": {
     "@hookstate/core": "^3.0.13",
     "@testing-library/jest-dom": "^5.14.1",

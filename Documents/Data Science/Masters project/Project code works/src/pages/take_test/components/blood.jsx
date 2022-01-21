@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { useHookstate } from '@hookstate/core';
 
 import { userBloodPressure, userAge, userWeight, userHeight, userBmi, userGlucoseLevel, userInsulinLevel, testQuestion, userResult } from '../../../services/store';
@@ -19,7 +19,8 @@ const Blood = () => {
   const question = useHookstate(testQuestion);
   const result = useHookstate(userResult);
 
-  const api = ""; // Link to API
+  
+  let history = useHistory();
 
   // useEffect(() => {
   //   if (bloodPressure.value == "" || parseFloat(bloodPressure.value) < 0) {
@@ -28,18 +29,23 @@ const Blood = () => {
   // }, [bloodPressure.value])
 
   const submitData = () => {
-    const data = {age, bmi, glucoseLevel, insulinLevel, bloodPressure};
+    
+    let data = {"Age": age.value, "BMI": bmi.value, "Glucose": glucoseLevel.value, 
+              "Insulin": insulinLevel.value, "BloodPressure": bloodPressure.value};
 
-    fetch(api, {
-      method: "post",
-      body: data,
-    }).then((response) => {
+    fetch("/api/predict", {
+      method: "POST",
+      body: JSON.stringify(data)
+    })
+    .then((r) => r.json())
+    .then((response) => {
       if (response.status_code == 200) {
         result.set({
           percentage: response.body.percentage,
           level: response.body.level,
           message: response.body.message,
-        });
+        })
+        console.log(response);
 
         age.set(1);
         weight.set(1);
@@ -49,9 +55,11 @@ const Blood = () => {
         insulinLevel.set(1);
         bloodPressure.set(1);
 
-        return <Redirect />;
+        history.push("/test-result");
       }
     })
+
+    // console.log(data)
   }
 
   return (
@@ -67,7 +75,7 @@ const Blood = () => {
               <div className="counter-btn" unselectable="on" onClick={() => bloodPressure.value === "" ? bloodPressure.set(1) : bloodPressure.set(parseFloat(bloodPressure.value) + 1)}>+</div>
             </div>
             <div className="control">
-              <button className="btn" onClick={() => question.set(question.value - 1)}>Previous</button>
+              <button className="btn" onClick={() => bloodPressure.value != "" && question.set(question.value - 1)}>Previous</button>
               <h6>Question 6 out of 6</h6>
               <button className="btn" onClick={submitData}>Result</button>
             </div>
